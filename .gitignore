@@ -1,2 +1,4 @@
 src/tmp/
 src/.tup
+*.o
+*.a

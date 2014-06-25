@@ -5,8 +5,7 @@ CFLAGS = $(INCLUDES) -O3 -g -Wall -Werror-implicit-function-declaration
 
 CC = gcc
 
-libsrcs += liblmdb/*.c
+srcs += *.c
 
-: ./bootstrap.sh |> %o |> output.txt 
-: foreach $(libsrcs) |> $(CC) -c %f -o %o |> %B.o
+: foreach $(srcs) |> $(CC) -c %f -o %o $(CFLAGS) |> %B.o
 : *.o |> ar r libmrb_lmdb.a %f |> libmrb_lmdb.a
